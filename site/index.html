@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Forge Talent — Your Future, Our Mission</title>
+  <meta name="description" content="Future Forge Talent — Leading HR & Recruitment Consultancy in Bengaluru. We connect top talent with leading companies through expert executive search and career advisory services." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180x180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── FONTS ─────────────────────────────────────────────────────────── */
+    @font-face {
+      font-family: 'GothamBook';
+      src: url('assets/fonts/GothamBook.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: #2C2C2C;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── CSS VARIABLES ──────────────────────────────────────────────────── */
+    :root {
+      --navy:   #1B2A4A;
+      --navy-deep: #111B2E;
+      --navy-darkest: #0D1520;
+      --gold:   #C9972B;
+      --gold-light: #E0B84A;
+      --off-white: #F8F6F2;
+      --white:  #FFFFFF;
+      --text-dark: #2C2C2C;
+      --text-muted: #666;
+      --text-on-dark: #E0D8C8;
+      --header-h: 76px;
+    }
+
+    /* ── UTILITY ────────────────────────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title.light { color: var(--white); }
+    .section-title.dark  { color: var(--navy); }
+    .gold-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto;
+    }
+    .gold-divider.left { margin: 0; }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,151,43,0.35);
+    }
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+    .btn-outline-white:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ── HEADER ─────────────────────────────────────────────────────────── */
+    #site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--navy);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+    #site-header.scrolled {
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .header-logo img {
+      width: 160px;
+      filter: brightness(0) invert(1);
+      display: block;
+    }
+
+    /* Nav */
+    .main-nav { display: flex; align-items: center; gap: 4px; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: block;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-on-dark);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--gold); }
+    .nav-link .fa-chevron-down {
+      font-size: 10px;
+      margin-left: 4px;
+      transition: transform 0.2s;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 260px;
+      background: var(--navy-deep);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.22s ease;
+      z-index: 200;
+    }
+    .nav-item:hover > .dropdown,
+    .nav-item.open > .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 14px 18px 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .dropdown-link {
+      display: block;
+      padding: 9px 18px;
+      font-size: 13px;
+      color: var(--text-on-dark);
+      transition: background 0.15s, color 0.15s, padding-left 0.15s;
+    }
+    .dropdown-link:hover {
+      background: rgba(201,151,43,0.12);
+      color: var(--gold);
+      padding-left: 24px;
+    }
+
+    /* CTA button in nav */
+    .nav-cta {
+      margin-left: 12px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 9px 18px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0; bottom: 0;
+      background: var(--navy-deep);
+      overflow-y: auto;
+      z-index: 999;
+      padding: 20px 0 40px;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .mobile-nav.open {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .mobile-nav-link {
+      display: block;
+      padding: 14px 28px;
+      color: var(--text-on-dark);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .mobile-nav-link:hover { color: var(--gold); padding-left: 36px; }
+    .mobile-dropdown-group { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      color: var(--text-on-dark);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+    .mobile-dropdown-toggle i { transition: transform 0.25s; }
+    .mobile-dropdown-toggle.open i { transform: rotate(180deg); }
+    .mobile-dropdown-menu {
+      display: none;
+      background: rgba(0,0,0,0.2);
+      padding: 6px 0;
+    }
+    .mobile-dropdown-menu.open { display: block; }
+    .mobile-sub-section {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      padding: 10px 36px 4px;
+    }
+    .mobile-dropdown-link {
+      display: block;
+      padding: 9px 36px;
+      font-size: 13px;
+      color: var(--text-on-dark);
+      opacity: 0.85;
+    }
+    .mobile-dropdown-link:hover { color: var(--gold); opacity: 1; }
+    .mobile-nav-cta {
+      display: block;
+      margin: 20px 28px 0;
+      background: var(--gold);
+      color: var(--navy);
+      text-align: center;
+      padding: 14px;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ────────────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--header-h);
+      background: var(--navy);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: calc(100vh - var(--header-h));
+      width: 100%;
+    }
+    .hero-text {
+      padding: 80px 60px 80px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .hero-heading {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: clamp(40px, 5.5vw, 68px);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+    .hero-heading em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-on-dark);
+      margin-bottom: 40px;
+      max-width: 460px;
+      line-height: 1.75;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image {
+      position: relative;
+      height: 100%;
+      min-height: 560px;
+    }
+    .hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 40%);
+      z-index: 1;
+    }
+    /* Decorative accent */
+    .hero-text::after {
+      content: '';
+      position: absolute;
+      bottom: 60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(201,151,43,0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────────────────────── */
+    #about {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(27,42,74,0.18);
+      position: relative;
+    }
+    .about-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-img::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 80%;
+      height: 80%;
+      border: 3px solid var(--gold);
+      border-radius: 6px;
+      z-index: -1;
+    }
+    .about-content .section-header {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .about-content .gold-divider { margin: 0; }
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 15.5px;
+    }
+    .about-content p:last-of-type { margin-bottom: 28px; }
+
+    /* ── SERVICES: EMPLOYERS ─────────────────────────────────────────────── */
+    #services {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 32px 28px;
+      transition: all 0.28s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card { cursor: pointer; }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      background: rgba(255,255,255,0.09);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,151,43,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 20px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    /* Center 7th card in 3-col grid */
+    @media (min-width: 1025px) {
+      .service-card-last { grid-column: 2; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .service-card-last { grid-column: 1 / span 2; }
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--gold);
+      color: var(--navy);
+      transform: scale(1.08);
+    }
+    .service-card h3 {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+    }
+    .service-card p {
+      font-size: 13.5px;
+      color: rgba(224,216,200,0.75);
+      line-height: 1.65;
+    }
+
+    /* ── SERVICES: JOB SEEKERS ────────────────────────────────────────────── */
+    #services-seekers {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .services-seekers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .seeker-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 6px;
+      padding: 36px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: all 0.28s ease;
+    }
+    .seeker-card { cursor: pointer; }
+    .seeker-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(27,42,74,0.12);
+    }
+    .seeker-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(201,151,43,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-size: 22px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .seeker-card:hover .seeker-icon {
+      background: var(--gold);
+      color: var(--white);
+      transform: scale(1.08);
+    }
+    .seeker-card h3 {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .seeker-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── STATS ────────────────────────────────────────────────────────────── */
+    #career {
+      padding: 80px 0;
+      background: var(--gold);
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+    .stat-number {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: clamp(60px, 8vw, 90px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+    }
+    .stat-number .percent {
+      font-size: 0.55em;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .stat-label {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-top: 10px;
+    }
+    .stat-divider {
+      width: 1px;
+      background: rgba(27,42,74,0.25);
+      align-self: stretch;
+      display: block;
+    }
+
+    /* ── CONTACT ─────────────────────────────────────────────────────────── */
+    #contact {
+      padding: 100px 0;
+      background: var(--navy);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .contact-left { padding-top: 10px; }
+    .contact-phone-icon {
+      font-size: 72px;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: block;
+    }
+    .contact-left h2 {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .contact-left p {
+      font-size: 15.5px;
+      color: var(--text-on-dark);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      opacity: 0.85;
+    }
+    .social-links { display: flex; gap: 14px; }
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(201,151,43,0.2);
+      border: 1px solid rgba(201,151,43,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 16px;
+      transition: all 0.25s ease;
+    }
+    .social-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    /* Contact Form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(224,216,200,0.7);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 3px;
+      padding: 13px 16px;
+      color: var(--white);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input { height: 48px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.12);
+    }
+    .form-group select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9972B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+    .form-group select option { background: var(--navy-deep); color: var(--white); }
+    /* Custom dropdown */
+    .custom-select {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+    }
+    .custom-select-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 48px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 3px;
+      padding: 0 16px;
+      color: rgba(255,255,255,0.35);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .custom-select.has-value .custom-select-trigger { color: var(--white); }
+    .custom-select:focus .custom-select-trigger,
+    .custom-select.open .custom-select-trigger {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.12);
+    }
+    .custom-select.invalid .custom-select-trigger { border-color: #e74c3c; }
+    .custom-select-arrow {
+      color: var(--gold);
+      font-size: 11px;
+      transition: transform 0.22s;
+      flex-shrink: 0;
+    }
+    .custom-select.open .custom-select-arrow { transform: rotate(180deg); }
+    .custom-select-options {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: #1a2640;
+      border: 1px solid rgba(201,151,43,0.35);
+      border-radius: 3px;
+      list-style: none;
+      margin: 0;
+      padding: 4px 0;
+      z-index: 200;
+      display: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .custom-select.open .custom-select-options { display: block; }
+    .custom-select-option {
+      padding: 11px 16px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+    }
+    .custom-select-option:hover { background: rgba(201,151,43,0.12); color: var(--gold); }
+    .custom-select-option.selected { color: var(--gold); font-weight: 600; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .file-upload-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px dashed rgba(255,255,255,0.25);
+      border-radius: 3px;
+      color: rgba(224,216,200,0.65);
+      font-size: 13px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .file-upload-label:hover {
+      border-color: var(--gold);
+      background: rgba(201,151,43,0.08);
+      color: var(--gold);
+    }
+    .file-upload-label i { font-size: 16px; color: var(--gold); }
+    .file-input { display: none; }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 4px;
+    }
+    .btn-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,151,43,0.35);
+    }
+    .btn-submit-loading { display: none; }
+    .btn-submit.loading .btn-submit-text { display: none; }
+    .btn-submit.loading .btn-submit-loading { display: inline; }
+    .btn-submit:disabled { opacity: 0.75; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .req { color: #f87171; margin-left: 2px; }
+
+    .field-error {
+      font-size: 12px;
+      color: #f87171;
+      min-height: 16px;
+      display: block;
+    }
+    .form-group input.invalid,
+    .form-group select.invalid,
+    .form-group textarea.invalid {
+      border-color: #f87171;
+    }
+
+    .form-feedback {
+      display: none;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .form-feedback.visible { display: flex; }
+    .form-feedback i { font-size: 22px; margin-top: 2px; flex-shrink: 0; }
+    .form-feedback strong { display: block; margin-bottom: 2px; }
+    .form-feedback p { margin: 0; opacity: 0.85; font-size: 13px; }
+    .form-success { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: #86efac; }
+    .form-success i { color: #4ade80; }
+    .form-error { background: rgba(248,113,113,0.12); border: 1px solid rgba(248,113,113,0.3); color: #fca5a5; }
+    .form-error i { color: #f87171; }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────────── */
+    #site-footer {
+      background: var(--navy-deep);
+      padding: 80px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-logo img {
+      width: 150px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 18px;
+    }
+    .footer-desc {
+      font-size: 13.5px;
+      color: rgba(224,216,200,0.6);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-on-dark);
+      font-size: 14px;
+      transition: all 0.22s;
+    }
+    .footer-social-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+    .footer-col-title {
+      font-family: 'GothamBook', Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .footer-col-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 32px; height: 2px;
+      background: var(--gold);
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(224,216,200,0.6);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); padding-left: 6px; }
+    .footer-bottom {
+      background: var(--navy-darkest);
+      padding: 18px 0;
+    }
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .footer-copyright {
+      font-size: 12.5px;
+      color: rgba(224,216,200,0.45);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-seekers-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .hero-text { padding: 80px 40px 80px 0; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --header-h: 66px; }
+
+      /* Header */
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+
+      /* Hero */
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-text { padding: 60px 0 50px; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-eyebrow::before { display: none; }
+      .hero-sub { margin: 0 auto 36px; }
+      .hero-btns { justify-content: center; }
+      .hero-image { min-height: 300px; }
+      .hero-text::after { display: none; }
+
+      /* About */
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-content .section-header { text-align: center; }
+      .about-content .gold-divider { margin: 0 auto; }
+      .about-img::after { display: none; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; }
+      .services-seekers-grid { grid-template-columns: 1fr; }
+
+      /* Stats */
+      .stats-inner { grid-template-columns: 1fr; gap: 0; }
+      .stat-divider { width: 60px; height: 1px; margin: 10px auto; }
+
+      /* Contact */
+      .contact-inner { grid-template-columns: 1fr; gap: 50px; }
+      .contact-left { text-align: center; }
+      .social-links { justify-content: center; }
+      .form-row { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (min-width: 769px) and (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── STICKY HEADER ──────────────────────────────────────────────────────── -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#hero" class="header-logo">
+        <img src="assets/logo.png" alt="Future Forge Talent" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-item">
+          <a href="#hero" class="nav-link">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#about" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="#career" class="nav-link">Career</a>
+        </div>
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            Services <i class="fa fa-chevron-down"></i>
+          </a>
+          <div class="dropdown">
+            <div class="dropdown-section-title">For Employers</div>
+            <a href="#services" class="dropdown-link">Talent Acquisition &amp; Recruitment Services</a>
+            <a href="#services" class="dropdown-link">Executive Search &amp; Leadership Hiring</a>
+            <a href="#services" class="dropdown-link">Employee Training &amp; Development</a>
+            <a href="#services" class="dropdown-link">HR Outsourcing &amp; Compliance</a>
+            <a href="#services" class="dropdown-link">Employee Engagement &amp; Retention</a>
+            <a href="#services" class="dropdown-link">Recruitment Process Outsourcing</a>
+            <a href="#services" class="dropdown-link">Job Market &amp; Salary Benchmarking</a>
+            <div class="dropdown-section-title" style="margin-top:8px;">For Job Seekers</div>
+            <a href="#services-seekers" class="dropdown-link">Freelancing &amp; Remote Work Opportunities</a>
+            <a href="#services-seekers" class="dropdown-link">Job Search Strategy &amp; Networking</a>
+            <a href="#services-seekers" class="dropdown-link">Interview Preparation &amp; Mock Interviews</a>
+            <a href="#services-seekers" class="dropdown-link">Job Matching &amp; Placement Services</a>
+            <a href="#services-seekers" class="dropdown-link">Resume Writing &amp; LinkedIn Profile Optimization</a>
+            <a href="#services-seekers" class="dropdown-link">Career Counselling &amp; Coaching</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#contact" class="nav-link">Contact Us</a>
+        </div>
+        <a href="tel:+918147800538" class="nav-link nav-cta">
+          <i class="fa fa-phone"></i>&nbsp; Click To Call
+        </a>
+      </nav>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <a href="#hero" class="mobile-nav-link">Home</a>
+  <a href="#about" class="mobile-nav-link">About Us</a>
+  <a href="#career" class="mobile-nav-link">Career</a>
+  <div class="mobile-dropdown-group">
+    <button class="mobile-dropdown-toggle" id="mob-services-toggle">
+      Services <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="mobile-dropdown-menu" id="mob-services-menu">
+      <div class="mobile-sub-section">For Employers</div>
+      <a href="#services" class="mobile-dropdown-link">Talent Acquisition &amp; Recruitment Services</a>
+      <a href="#services" class="mobile-dropdown-link">Executive Search &amp; Leadership Hiring</a>
+      <a href="#services" class="mobile-dropdown-link">Employee Training &amp; Development</a>
+      <a href="#services" class="mobile-dropdown-link">HR Outsourcing &amp; Compliance</a>
+      <a href="#services" class="mobile-dropdown-link">Employee Engagement &amp; Retention</a>
+      <a href="#services" class="mobile-dropdown-link">Recruitment Process Outsourcing</a>
+      <a href="#services" class="mobile-dropdown-link">Job Market &amp; Salary Benchmarking</a>
+      <div class="mobile-sub-section">For Job Seekers</div>
+      <a href="#services-seekers" class="mobile-dropdown-link">Freelancing &amp; Remote Work Opportunities</a>
+      <a href="#services-seekers" class="mobile-dropdown-link">Job Search Strategy &amp; Networking</a>
+      <a href="#services-seekers" class="mobile-dropdown-link">Interview Preparation &amp; Mock Interviews</a>
+      <a href="#services-seekers" class="mobile-dropdown-link">Job Matching &amp; Placement Services</a>
+      <a href="#services-seekers" class="mobile-dropdown-link">Resume Writing &amp; LinkedIn Profile Optimization</a>
+      <a href="#services-seekers" class="mobile-dropdown-link">Career Counselling &amp; Coaching</a>
+    </div>
+  </div>
+  <a href="#contact" class="mobile-nav-link">Contact Us</a>
+  <a href="tel:+918147800538" class="mobile-nav-cta">
+    <i class="fa fa-phone"></i>&nbsp; Click To Call
+  </a>
+</nav>
+
+<main>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section id="hero" aria-label="Hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Bengaluru's Premier Recruitment Partner</p>
+        <h1 class="hero-heading">
+          Your Future,<br><em>Our Mission</em>
+        </h1>
+        <p class="hero-sub">Our commitment to guiding job seekers and employers toward success — one perfect match at a time.</p>
+        <div class="hero-btns">
+          <a href="#about" class="btn btn-gold">Learn More</a>
+          <a href="#contact" class="btn btn-outline-white">Get Started</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/teamwork.jpg" alt="Team collaborating at Future Forge Talent" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────────────────── -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img">
+        <img src="assets/teamwork.jpg" alt="Our team at work" loading="lazy" />
+      </div>
+      <div class="about-content">
+        <div class="section-header">
+          <p class="section-label">Who We Are</p>
+          <h2 id="about-title" class="section-title dark">Your Future,<br>Our Mission</h2>
+          <div class="gold-divider left"></div>
+        </div>
+        <p>Future Forge Talent connects top talent with leading companies through expert executive search and career advisory services. We help job seekers advance their careers and organizations find the best-fit professionals for business growth and success.</p>
+        <p>At Future Forge Talent, we are dedicated to shaping the future of talent by connecting exceptional individuals with organizations that are driven by innovation.</p>
+        <a href="#services" class="btn btn-gold">Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES: EMPLOYERS ────────────────────────────────────────────────── -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label" style="color:var(--gold-light);">What We Offer</p>
+      <h2 id="services-title" class="section-title light">Services <span style="color:var(--gold);">For Employers</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Talent Acquisition &amp; Recruitment Services</h3>
+        <p>Quickly find and hire the best talent with our talent acquisition and recruitment services, tailored to meet your business needs.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <h3>Executive Search &amp; Leadership Hiring</h3>
+        <p>Hire top-level executives with executive search services, ensuring the perfect leadership fit for your business growth.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <h3>Employee Training &amp; Development</h3>
+        <p>Enhance your team's skills and drive performance with our customized employee training and development programs.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <h3>HR Outsourcing &amp; Compliance</h3>
+        <p>Simplify HR functions and ensure compliance with our HR outsourcing and compliance solutions for a smooth operation.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Employee Engagement &amp; Retention</h3>
+        <p>Boost employee satisfaction and retention with our effective employee engagement and retention strategies.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>Recruitment Process Outsourcing</h3>
+        <p>Streamline your hiring process with our RPO services, providing end-to-end recruitment outsourcing solutions.</p>
+      </article>
+      <article class="service-card service-card-last">
+        <div class="service-icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h3>Job Market &amp; Salary Benchmarking</h3>
+        <p>Stay competitive with salary benchmarking and job market analysis to attract top talent with the right compensation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES: JOB SEEKERS ──────────────────────────────────────────────── -->
+<section id="services-seekers" aria-labelledby="seekers-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Empowering Careers</p>
+      <h2 id="seekers-title" class="section-title dark">Services <span style="color:var(--gold);">For Job Seekers</span></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="services-seekers-grid">
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-compass"></i></div>
+        <h3>Career Counselling &amp; Coaching</h3>
+        <p>Navigate your career path with career counseling and expert coaching services, tailored to your professional goals.</p>
+      </article>
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h3>Resume Writing &amp; LinkedIn Profile Optimization</h3>
+        <p>Stand out to employers with professional resume writing and LinkedIn optimization that highlight your strengths.</p>
+      </article>
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Job Matching &amp; Placement Services</h3>
+        <p>Find the perfect job with our job matching and placement services, connecting your skills to top employers.</p>
+      </article>
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Interview Preparation &amp; Mock Interviews</h3>
+        <p>Prepare for success with interview coaching and mock interviews, ensuring you're ready to impress potential employers.</p>
+      </article>
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Job Search Strategy &amp; Networking</h3>
+        <p>Discover effective job search strategies and expand your professional network to unlock new career opportunities.</p>
+      </article>
+      <article class="seeker-card">
+        <div class="seeker-icon"><i class="fa-solid fa-laptop"></i></div>
+        <h3>Freelancing &amp; Remote Work Opportunities</h3>
+        <p>Explore freelancing and remote work opportunities that match your skills and offer the flexibility you need.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ───────────────────────────────────────────────────────────────── -->
+<section id="career" aria-label="Key Statistics">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">
+          <span class="counter" data-target="100">0</span><span class="percent">%</span>
+        </div>
+        <p class="stat-label">Job Guarantee</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">
+          <span class="counter" data-target="100">0</span><span class="percent">%</span>
+        </div>
+        <p class="stat-label">Job Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BLOG ────────────────────────────────────────────────────────────────── -->
+<!-- ── CONTACT ─────────────────────────────────────────────────────────────── -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <i class="fa-solid fa-phone-volume contact-phone-icon" aria-hidden="true"></i>
+        <h2 id="contact-title">Let's Talk</h2>
+        <p>Get in touch with us. We're here to help you find the right talent or the right opportunity.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/people/Future-Forge-Talent/61573217100058/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/futureforgetalent/?hl=en" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/future-forge-talent/about/?viewAsMember=true" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <span class="field-error" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+            <span class="field-error" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <label>I Am A <span class="req">*</span></label>
+            <div class="custom-select" id="user-type-select" tabindex="0" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+              <div class="custom-select-trigger">
+                <span id="user-type-display">Select</span>
+                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+              </div>
+              <ul class="custom-select-options" role="listbox">
+                <li class="custom-select-option" data-value="jobseeker" role="option">Jobseeker</li>
+                <li class="custom-select-option" data-value="employer" role="option">Employer</li>
+              </ul>
+            </div>
+            <input type="hidden" id="user-type" name="user_type" />
+            <span class="field-error" id="usertype-error"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+          <span class="field-error" id="message-error"></span>
+        </div>
+        <div class="form-group">
+          <label>Attach Resume / Document</label>
+          <label class="file-upload-label" for="file-upload">
+            <i class="fa-solid fa-paperclip"></i>
+            <span id="file-name">Click to browse or drag &amp; drop</span>
+          </label>
+          <input type="file" id="file-upload" name="attachment" class="file-input" accept=".pdf,.doc,.docx" />
+        </div>
+
+        <!-- Success / Error feedback -->
+        <div class="form-feedback form-success" id="form-success" role="alert" aria-live="polite">
+          <i class="fa-solid fa-circle-check"></i>
+          <div>
+            <strong>Message sent!</strong>
+            <p>Thank you for reaching out. We'll get back to you shortly.</p>
+          </div>
+        </div>
+        <div class="form-feedback form-error" id="form-error" role="alert" aria-live="polite">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div>
+            <strong>Something went wrong.</strong>
+            <p>Please try again or email us directly.</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">
+          <span class="btn-submit-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+          <span class="btn-submit-loading" aria-hidden="true">
+            <i class="fa-solid fa-circle-notch fa-spin"></i> Sending…
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer id="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Col 1: Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Future Forge Talent" />
+        </div>
+        <p class="footer-desc">At Future Forge Talent, we are dedicated to shaping the future of talent by connecting exceptional individuals with organizations that are driven by innovation.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Future-Forge-Talent/61573217100058/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/futureforgetalent/?hl=en" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/future-forge-talent/about/?viewAsMember=true" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Menu -->
+      <div>
+        <h3 class="footer-col-title">Quick Menu</h3>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: For Employers -->
+      <div>
+        <h3 class="footer-col-title">For Employers</h3>
+        <ul class="footer-links">
+          <li><a href="#services">Job Market &amp; Salary Benchmarking</a></li>
+          <li><a href="#services">Recruitment Process Outsourcing</a></li>
+          <li><a href="#services">Employee Engagement &amp; Retention</a></li>
+          <li><a href="#services">HR Outsourcing &amp; Compliance</a></li>
+          <li><a href="#services">Employee Training &amp; Development</a></li>
+          <li><a href="#services">Executive Search &amp; Leadership Hiring</a></li>
+          <li><a href="#services">Talent Acquisition &amp; Recruitment Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: For Job Seekers -->
+      <div>
+        <h3 class="footer-col-title">For Job Seekers</h3>
+        <ul class="footer-links">
+          <li><a href="#services-seekers">Career Counselling &amp; Coaching</a></li>
+          <li><a href="#services-seekers">Freelancing &amp; Remote Work Opportunities</a></li>
+          <li><a href="#services-seekers">Interview Preparation &amp; Mock Interviews</a></li>
+          <li><a href="#services-seekers">Job Matching &amp; Placement Services</a></li>
+          <li><a href="#services-seekers">Job Search Strategy &amp; Networking</a></li>
+          <li><a href="#services-seekers">Resume Writing &amp; LinkedIn Profile Optimization</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">© 2026 - All Rights Reserved By Future Forge Talent</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── 1. STICKY HEADER SHADOW ──────────────────────────────────────────────
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ── 2. MOBILE HAMBURGER ──────────────────────────────────────────────────
+  const hamburger  = document.getElementById('hamburger');
+  const mobileNav  = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile nav when any link is clicked
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ── 3. MOBILE SERVICES DROPDOWN ─────────────────────────────────────────
+  const mobToggle = document.getElementById('mob-services-toggle');
+  const mobMenu   = document.getElementById('mob-services-menu');
+  mobToggle.addEventListener('click', () => {
+    const open = mobMenu.classList.toggle('open');
+    mobToggle.classList.toggle('open', open);
+  });
+
+  // ── 4. COUNTER ANIMATION ─────────────────────────────────────────────────
+  function animateCounter(el) {
+    const target   = parseInt(el.dataset.target, 10);
+    const duration = 1500;
+    const step     = 16;
+    const steps    = Math.ceil(duration / step);
+    const inc      = target / steps;
+    let current    = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + inc, target);
+      el.textContent = Math.round(current);
+      if (current >= target) clearInterval(timer);
+    }, step);
+  }
+
+  const statsSection = document.getElementById('career');
+  let countersStarted = false;
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !countersStarted) {
+        countersStarted = true;
+        document.querySelectorAll('.counter').forEach(animateCounter);
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  if (statsSection) statsObserver.observe(statsSection);
+
+  // ── 5. FILE INPUT LABEL UPDATE ──────────────────────────────────────────
+  const fileInput  = document.getElementById('file-upload');
+  const fileNameEl = document.getElementById('file-name');
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      const name = fileInput.files[0]?.name;
+      fileNameEl.textContent = name || 'Click to browse or drag & drop';
+    });
+  }
+
+  // ── 7. SERVICE CARDS → SCROLL TO CONTACT ───────────────────────────────
+  document.querySelectorAll('.service-card, .seeker-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // ── 8. BASIN FORM SUBMISSION ─────────────────────────────────────────────
+  const contactForm    = document.getElementById('contact-form');
+  const submitBtn      = document.getElementById('submit-btn');
+  const successEl      = document.getElementById('form-success');
+  const errorEl        = document.getElementById('form-error');
+  const nameInput      = document.getElementById('name');
+  const emailInput     = document.getElementById('email');
+  const userTypeInput  = document.getElementById('user-type');
+  const messageInput   = document.getElementById('message');
+  const nameError      = document.getElementById('name-error');
+  const emailError     = document.getElementById('email-error');
+  const usertypeError  = document.getElementById('usertype-error');
+  const messageError   = document.getElementById('message-error');
+  const customSelectEl = document.getElementById('user-type-select');
+  const userTypeDisplay = document.getElementById('user-type-display');
+
+  // Custom dropdown logic
+  if (customSelectEl) {
+    const options = customSelectEl.querySelectorAll('.custom-select-option');
+
+    function closeCustomSelect() {
+      customSelectEl.classList.remove('open');
+      customSelectEl.setAttribute('aria-expanded', 'false');
+    }
+
+    customSelectEl.addEventListener('click', () => {
+      const isOpen = customSelectEl.classList.toggle('open');
+      customSelectEl.setAttribute('aria-expanded', isOpen);
+    });
+
+    options.forEach(option => {
+      option.addEventListener('click', e => {
+        e.stopPropagation();
+        userTypeInput.value = option.dataset.value;
+        userTypeDisplay.textContent = option.textContent;
+        customSelectEl.classList.add('has-value');
+        customSelectEl.classList.remove('invalid');
+        usertypeError.textContent = '';
+        options.forEach(o => o.classList.remove('selected'));
+        option.classList.add('selected');
+        closeCustomSelect();
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!customSelectEl.contains(e.target)) closeCustomSelect();
+    });
+
+    customSelectEl.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = customSelectEl.classList.toggle('open');
+        customSelectEl.setAttribute('aria-expanded', isOpen);
+      } else if (e.key === 'Escape') {
+        closeCustomSelect();
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const list = Array.from(options);
+        const cur = list.findIndex(o => o.classList.contains('selected'));
+        const next = Math.max(0, Math.min(e.key === 'ArrowDown' ? cur + 1 : cur - 1, list.length - 1));
+        list[next].click();
+      }
+    });
+  }
+
+  function setFieldError(input, errorEl, msg) {
+    input.classList.toggle('invalid', !!msg);
+    errorEl.textContent = msg;
+  }
+
+  function validateForm() {
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      setFieldError(nameInput, nameError, 'Name is required.');
+      valid = false;
+    } else {
+      setFieldError(nameInput, nameError, '');
+    }
+
+    const emailVal = emailInput.value.trim();
+    if (!emailVal) {
+      setFieldError(emailInput, emailError, 'Email is required.');
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      setFieldError(emailInput, emailError, 'Please enter a valid email address.');
+      valid = false;
+    } else {
+      setFieldError(emailInput, emailError, '');
+    }
+
+    if (!userTypeInput.value) {
+      customSelectEl.classList.add('invalid');
+      usertypeError.textContent = 'Please select an option.';
+      valid = false;
+    } else {
+      customSelectEl.classList.remove('invalid');
+      usertypeError.textContent = '';
+    }
+
+    if (!messageInput.value.trim()) {
+      setFieldError(messageInput, messageError, 'Message is required.');
+      valid = false;
+    } else {
+      setFieldError(messageInput, messageError, '');
+    }
+
+    return valid;
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      successEl.classList.remove('visible');
+      errorEl.classList.remove('visible');
+
+      if (!validateForm()) return;
+
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://usebasin.com/f/9dbe1d259e12', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (response.ok) {
+          successEl.classList.add('visible');
+          contactForm.reset();
+          fileNameEl.textContent = 'Click to browse or drag & drop';
+          setFieldError(nameInput, nameError, '');
+          setFieldError(emailInput, emailError, '');
+          customSelectEl.classList.remove('has-value', 'invalid');
+          userTypeDisplay.textContent = 'Select';
+          customSelectEl.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+          usertypeError.textContent = '';
+          setFieldError(messageInput, messageError, '');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          errorEl.classList.add('visible');
+        }
+      } catch (err) {
+        errorEl.classList.add('visible');
+      } finally {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Clear errors on input/change
+    nameInput.addEventListener('input',    () => setFieldError(nameInput,     nameError,     ''));
+    emailInput.addEventListener('input',   () => setFieldError(emailInput,    emailError,    ''));
+    userTypeInput.addEventListener('change', () => setFieldError(userTypeInput, usertypeError, ''));
+    messageInput.addEventListener('input', () => setFieldError(messageInput,  messageError,  ''));
+  }
+
+  // ── 6. SMOOTH ACTIVE NAV HIGHLIGHTING ───────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+  const sectionMap = { hero: '#hero', about: '#about', services: '#services', 'services-seekers': '#services-seekers', career: '#career', contact: '#contact' };
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
